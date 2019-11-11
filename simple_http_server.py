@@ -11,6 +11,7 @@ __author__ = "freelamb"
 __all__ = ["SimpleHTTPRequestHandler"]
 
 import os
+import glob
 import sys
 import posixpath
 import BaseHTTPServer
@@ -83,6 +84,10 @@ class SimpleHTTPRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         exit_code = call("python3 csvparser.py", shell=True)
 
     def deal_post_data(self):
+        # Olivier first delete trame.csv if exists to allow uplaod a new one
+        for f in glob.glob("trame.csv*"):
+            os.remove(f)
+
         boundary = self.headers.plisttext.split("=")[1]
         remain_bytes = int(self.headers['content-length'])
         line = self.rfile.readline()

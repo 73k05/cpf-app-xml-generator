@@ -2,6 +2,9 @@ import pandas as pd
 import xml.etree.ElementTree as ET
 import io
 import os
+import glob
+import csv
+import chardet
 
 def parse_generate():
 
@@ -15,8 +18,25 @@ def parse_generate():
 	lheo = ET.Element('lheo')
 	lheo.attrib['xmlns'] = 'http://www.lheo.org/2.2'
 
+	file_encoding = 'UTF-8'
+	sep = ','
+	with open(r'trame.csv', 'rb') as f:
+		result = chardet.detect(f.read()) # or readline if the file is large
+		file_encoding = result['encoding']
+		if file_encoding.lower() != "utf-8":
+			sep = ';'
+
+	print("Encoding is ", file_encoding)
+
 	# Read in the data
-	data = pd.read_csv(filename)
+	# ISO-8859-1
+	# unicode
+	# utf-16
+	# utf-8
+	# cp1252
+	# utf-8-sig
+	# latin1
+	data = pd.read_csv(filename, engine='python', encoding=file_encoding, quoting=csv.QUOTE_NONE, error_bad_lines=False, sep=sep)
 
 	for index, row in data.iterrows():
 		print("File generation...")
@@ -24,21 +44,21 @@ def parse_generate():
 		offres = ET.SubElement(lheo,'offres')
 
 		formation = ET.SubElement(offres,'formation')
-		formation.attrib['numero'] = row['numero']
+		formation.attrib['numero'] = str(row['numero'])
 		formation.attrib['datemaj'] = str(row['datemaj'])
 		formation.attrib['datecrea'] = str(row['datecrea'])
 
 		intitule_formation = ET.SubElement(formation,'intitule-formation')
-		intitule_formation.text = row['intitule-formation']
+		intitule_formation.text = str(row['intitule-formation'])
 
 		objectif_formation = ET.SubElement(formation,'objectif-formation')
-		objectif_formation.text = row['objectif-formation']
+		objectif_formation.text = str(row['objectif-formation'])
 
 		resultats_attendus = ET.SubElement(formation,'resultats-attendus')
-		resultats_attendus.text = row['resultats-attendus']
+		resultats_attendus.text = str(row['resultats-attendus'])
 
 		contenu_formation = ET.SubElement(formation,'contenu-formation')
-		contenu_formation.text = row['contenu-formation']
+		contenu_formation.text = str(row['contenu-formation'])
 
 		parcours_de_formation = ET.SubElement(formation,'parcours-de-formation')
 		parcours_de_formation.text = str(row['parcours-de-formation'])
@@ -270,6 +290,15 @@ def parse_generate():
 	mycatalogue = io.open("catalogue.xml", "w", encoding='utf8')
 	mycatalogue.write(myoffers)
 	
-	os.remove("trame.csv")
-
+# Start parsing
 parse_generate()
+
+# Remove files
+def remove_file(filename):
+	if os.path.exists(filename):
+		os.remove(filename)
+		return
+
+# Delete old trame.csv
+for f in glob.glob("trame.csv*"):
+    os.remove(f)
