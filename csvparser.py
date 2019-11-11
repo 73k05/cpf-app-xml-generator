@@ -27,6 +27,7 @@ def parse_generate():
 			sep = ';'
 
 	print("Encoding is ", file_encoding)
+	engine = 'c' #c or python
 
 	# Read in the data
 	# ISO-8859-1
@@ -36,7 +37,7 @@ def parse_generate():
 	# cp1252
 	# utf-8-sig
 	# latin1
-	data = pd.read_csv(filename, engine='python', encoding=file_encoding, quoting=csv.QUOTE_NONE, error_bad_lines=False, sep=sep)
+	data = pd.read_csv(filename, engine=engine, encoding=file_encoding, quoting=csv.QUOTE_NONE, error_bad_lines=False, sep=sep)
 
 	for index, row in data.iterrows():
 		print("File generation...")
