@@ -6,6 +6,11 @@ import glob
 import csv
 import chardet
 
+def celltostr(cell):
+	if not pd.isnull(cell):
+		return str(cell )
+	return ''
+
 def parse_generate():
 
 	filename = "trame.csv"
@@ -44,112 +49,110 @@ def parse_generate():
 
 		offres = ET.SubElement(lheo,'offres')
 
-		print(row['numero'])
-
 		formation = ET.SubElement(offres,'formation')
-		formation.attrib['numero'] = str(row['numero'])
-		formation.attrib['datemaj'] = str(row['datemaj'])
-		formation.attrib['datecrea'] = str(row['datecrea'])
+		formation.attrib['numero'] = celltostr(row['numero'])
+		formation.attrib['datemaj'] = celltostr(row['datemaj'])
+		formation.attrib['datecrea'] = celltostr(row['datecrea'])
 
 		intitule_formation = ET.SubElement(formation,'intitule-formation')
-		intitule_formation.text = str(row['intitule-formation'])
+		intitule_formation.text = celltostr(row['intitule-formation'])
 
 		objectif_formation = ET.SubElement(formation,'objectif-formation')
-		objectif_formation.text = str(row['objectif-formation'])
+		objectif_formation.text = celltostr(row['objectif-formation'])
 
 		resultats_attendus = ET.SubElement(formation,'resultats-attendus')
-		resultats_attendus.text = str(row['resultats-attendus'])
+		resultats_attendus.text = celltostr(row['resultats-attendus'])
 
 		contenu_formation = ET.SubElement(formation,'contenu-formation')
-		contenu_formation.text = str(row['contenu-formation'])
+		contenu_formation.text = celltostr(row['contenu-formation'])
 
 		parcours_de_formation = ET.SubElement(formation,'parcours-de-formation')
-		parcours_de_formation.text = str(row['parcours-de-formation'])
+		parcours_de_formation.text = celltostr(row['parcours-de-formation'])
 
 		objectif_general_formation = ET.SubElement(formation,'objectif-general-formation')
-		objectif_general_formation.text = str(row['objectif-general-formation'])
+		objectif_general_formation.text = celltostr(row['objectif-general-formation'])
 
 		certification = ET.SubElement(formation,'certification')
 		code_CERTIFINFO = ET.SubElement(certification,'code-CERTIFINFO')
-		code_CERTIFINFO.text = str(row['code-CERTIFINFO'])
+		code_CERTIFINFO.text = celltostr(row['code-CERTIFINFO'])
 
 		# Action
 		action = ET.SubElement(formation,'action')
-		action.attrib['numero'] = str(row['action-numero'])
-		action.attrib['datemaj'] = str(row['action-datemaj'])
-		action.attrib['datecrea'] = str(row['action-datecrea'])
+		action.attrib['numero'] = celltostr(row['action-numero'])
+		action.attrib['datemaj'] = celltostr(row['action-datemaj'])
+		action.attrib['datecrea'] = celltostr(row['action-datecrea'])
 
 		rythme_formation = ET.SubElement(action,'rythme-formation')
-		rythme_formation.text = str(row['rythme-formation'])
+		rythme_formation.text = celltostr(row['rythme-formation'])
 
 		niveau_entree_obligatoire = ET.SubElement(action,'niveau-entree-obligatoire')
-		niveau_entree_obligatoire.text = str(row['niveau-entree-obligatoire'])
+		niveau_entree_obligatoire.text = celltostr(row['niveau-entree-obligatoire'])
 
 		modalites_enseignement = ET.SubElement(action,'modalites-enseignement')
-		modalites_enseignement.text = str(row['modalites-enseignement'])
+		modalites_enseignement.text = celltostr(row['modalites-enseignement'])
 
 		conditions_specifiques = ET.SubElement(action,'conditions-specifiques')
-		conditions_specifiques.text = str(row['conditions-specifiques'])
+		conditions_specifiques.text = celltostr(row['conditions-specifiques'])
 		
 		lieu_de_formation = ET.SubElement(action,'lieu-de-formation')
 		coordonnees = ET.SubElement(lieu_de_formation,'coordonnees')
-		coordonnees.attrib['numero'] = str(row['lieu-de-formation-coordonnees-numero'])
+		coordonnees.attrib['numero'] = celltostr(row['lieu-de-formation-coordonnees-numero'])
 
 		nom = ET.SubElement(coordonnees,'nom')
-		nom.text = str(row['lieu-de-formation-coordonnees-nom'])
+		nom.text = celltostr(row['lieu-de-formation-coordonnees-nom'])
 
 		prenom = ET.SubElement(coordonnees,'prenom')
-		prenom.text = str(row['lieu-de-formation-coordonnees-prenom'])
+		prenom.text = celltostr(row['lieu-de-formation-coordonnees-prenom'])
 
 		adresse = ET.SubElement(coordonnees,'adresse')
-		adresse.attrib['numero'] = str(row['lieu-de-formation-adresse-numero'])
+		adresse.attrib['numero'] = celltostr(row['lieu-de-formation-adresse-numero'])
 
 		ligne = ET.SubElement(adresse,'ligne')
-		ligne.text = str(row['lieu-de-formation-adresse-numero'])+str(row['lieu-de-formation-adresse-ligne'])
+		ligne.text = celltostr(row['lieu-de-formation-adresse-numero'])+' '+celltostr(row['lieu-de-formation-adresse-ligne'])
 
 		codepostal = ET.SubElement(adresse,'codepostal')
-		codepostal.text = str(row['lieu-de-formation-adresse-codepostal'])
+		codepostal.text = celltostr(row['lieu-de-formation-adresse-codepostal'])
 
 		ville = ET.SubElement(adresse,'ville')
-		ville.text = str(row['lieu-de-formation-adresse-ville'])
+		ville.text = celltostr(row['lieu-de-formation-adresse-ville'])
 
 		telfixe = ET.SubElement(coordonnees,'telfixe')
 		numtel = ET.SubElement(telfixe,'numtel')
-		numtel.text = str(row['lieu-de-formation-numtel'])
+		numtel.text = celltostr(row['lieu-de-formation-numtel'])
 
 		courriel = ET.SubElement(coordonnees,'courriel')
-		courriel.text = str(row['lieu-de-formation-courriel'])
+		courriel.text = celltostr(row['lieu-de-formation-courriel'])
 		
 		modalites_entrees_sorties = ET.SubElement(action,'modalites-entrees-sorties')
-		modalites_entrees_sorties.text = str(row['modalites-entrees-sorties'])
+		modalites_entrees_sorties.text = celltostr(row['modalites-entrees-sorties'])
 		
 		url_action = ET.SubElement(action,'url-action')
 		urlweb = ET.SubElement(url_action,'urlweb')
-		urlweb.text = str(row['urlweb'])
+		urlweb.text = celltostr(row['urlweb'])
 		
 		session = ET.SubElement(action,'session')
-		session.attrib['numero'] = str(row['session-numero'])
-		session.attrib['datemaj'] = str(row['session-datemaj'])
-		session.attrib['datecrea'] = str(row['session-datecrea'])
+		session.attrib['numero'] = celltostr(row['session-numero'])
+		session.attrib['datemaj'] = celltostr(row['session-datemaj'])
+		session.attrib['datecrea'] = celltostr(row['session-datecrea'])
 
 		periode = ET.SubElement(session,'periode')
 		debut = ET.SubElement(periode,'debut')
 		fin = ET.SubElement(periode,'fin')
-		debut.text = str(row['debut'])
-		fin.text = str(row['fin'])
+		debut.text = celltostr(row['debut'])
+		fin.text = celltostr(row['fin'])
 
 		adresse_inscription = ET.SubElement(session,'adresse-inscription')
 		adresse = ET.SubElement(adresse_inscription,'adresse')
-		adresse.attrib['numero'] = str(row['session-adresse-numero'])
+		adresse.attrib['numero'] = celltostr(row['session-adresse-numero'])
 		ligne = ET.SubElement(adresse,'ligne')
-		ligne.text = str(row['session-adresse-numero'])+str(row['session-adresse-ligne'])
+		ligne.text = celltostr(row['session-adresse-numero'])+celltostr(row['session-adresse-ligne'])
 		codepostal = ET.SubElement(adresse,'codepostal')
-		codepostal.text = str(row['session-adresse-codepostal'])
+		codepostal.text = celltostr(row['session-adresse-codepostal'])
 		ville = ET.SubElement(adresse,'ville')
-		ville.text = str(row['session-adresse-ville'])
+		ville.text = celltostr(row['session-adresse-ville'])
 
 		etat_recrutement = ET.SubElement(session,'etat-recrutement')
-		etat_recrutement.text = str(row['etat-recrutement'])
+		etat_recrutement.text = celltostr(row['etat-recrutement'])
 
 		# Extras
 		extras = ET.SubElement(session,'extras')
@@ -157,60 +160,60 @@ def parse_generate():
 		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'contact-inscription'
 		coordonnees = ET.SubElement(extra,'coordonnees')
-		coordonnees.attrib['numero'] = str(row['session-extra-coordonnees-numero'])
+		coordonnees.attrib['numero'] = celltostr(row['session-extra-coordonnees-numero'])
 		nom = ET.SubElement(coordonnees,'nom')
-		nom.text = str(row['session-extra-coordonnees-nom'])
+		nom.text = celltostr(row['session-extra-coordonnees-nom'])
 		prenom = ET.SubElement(coordonnees,'prenom')
-		prenom.text = str(row['session-extra-coordonnees-prenom'])
+		prenom.text = celltostr(row['session-extra-coordonnees-prenom'])
 		telfixe = ET.SubElement(coordonnees,'telfixe')
 		numtel = ET.SubElement(telfixe,'numtel')
-		numtel.text = str(row['session-extra-numtel'])
+		numtel.text = celltostr(row['session-extra-numtel'])
 		courriel = ET.SubElement(coordonnees,'courriel')
-		courriel.text = str(row['session-extra-courriel'])
+		courriel.text = celltostr(row['session-extra-courriel'])
 		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'garantie'
-		extra.text = str(row['session-extra-garantie'])
+		extra.text = celltostr(row['session-extra-garantie'])
 
 		# Adresse Info
 		adresse_information = ET.SubElement(action,'adresse-information')
 		adresse = ET.SubElement(adresse_information,'adresse')
-		adresse.attrib['numero'] = str(row['adresse-information-numero'])
+		adresse.attrib['numero'] = celltostr(row['adresse-information-numero'])
 		ligne = ET.SubElement(adresse,'ligne')
-		ligne.text = str(row['adresse-information-numero'])+str(row['adresse-information-ligne'])
+		ligne.text = celltostr(row['adresse-information-numero'])+' '+celltostr(row['adresse-information-ligne'])
 		codepostal = ET.SubElement(adresse,'codepostal')
-		codepostal.text = str(row['adresse-information-codepostal'])
+		codepostal.text = celltostr(row['adresse-information-codepostal'])
 		ville = ET.SubElement(adresse,'ville')
-		ville.text = str(row['adresse-information-ville'])
+		ville.text = celltostr(row['adresse-information-ville'])
 
 		restauration = ET.SubElement(action,'restauration')
-		restauration.text = str(row['restauration'])
+		restauration.text = celltostr(row['restauration'])
 
 		hebergement = ET.SubElement(action,'hebergement')
-		hebergement.text = str(row['hebergement'])
+		hebergement.text = celltostr(row['hebergement'])
 
 		transport = ET.SubElement(action,'transport')
-		transport.text = str(row['transport'])
+		transport.text = celltostr(row['transport'])
 
 		acces_handicapes = ET.SubElement(action,'acces-handicapes')
-		acces_handicapes.text = str(row['acces-handicapes'])
+		acces_handicapes.text = celltostr(row['acces-handicapes'])
 
 		langue_formation = ET.SubElement(action,'langue-formation')
-		langue_formation.text = str(row['langue-formation'])
+		langue_formation.text = celltostr(row['langue-formation'])
 
 		modalites_recrutement = ET.SubElement(action,'modalites-recrutement')
-		modalites_recrutement.text = str(row['modalites-recrutement'])
+		modalites_recrutement.text = celltostr(row['modalites-recrutement'])
 
 		modalites_pedagogiques = ET.SubElement(action,'modalites-pedagogiques')
-		modalites_pedagogiques.text = str(row['modalites-pedagogiques'])
+		modalites_pedagogiques.text = celltostr(row['modalites-pedagogiques'])
 
 		code_perimetre_recrutement = ET.SubElement(action,'code-perimetre-recrutement')
-		code_perimetre_recrutement.text = str(row['code-perimetre-recrutement'])
+		code_perimetre_recrutement.text = celltostr(row['code-perimetre-recrutement'])
 
 		nombre_heures_centre = ET.SubElement(action,'nombre-heures-centre')
-		nombre_heures_centre.text = str(row['nombre-heures-centre'])
+		nombre_heures_centre.text = celltostr(row['nombre-heures-centre'])
 
 		nombre_heures_entreprise = ET.SubElement(action,'nombre-heures-entreprise')
-		nombre_heures_entreprise.text = str(row['nombre-heures-entreprise'])
+		nombre_heures_entreprise.text = celltostr(row['nombre-heures-entreprise'])
 
 		# Extras
 		extras = ET.SubElement(action,'extras')
@@ -218,72 +221,72 @@ def parse_generate():
 		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'contact-information'
 		coordonnees = ET.SubElement(extra,'coordonnees')
-		coordonnees.attrib['numero'] = str(row['action-extra-coordonnees-numero'])
+		coordonnees.attrib['numero'] = celltostr(row['action-extra-coordonnees-numero'])
 		nom = ET.SubElement(coordonnees,'nom')
-		nom.text = str(row['action-extra-coordonnees-nom'])
+		nom.text = celltostr(row['action-extra-coordonnees-nom'])
 		prenom = ET.SubElement(coordonnees,'prenom')
-		prenom.text = str(row['action-extra-coordonnees-prenom'])
+		prenom.text = celltostr(row['action-extra-coordonnees-prenom'])
 		telfixe = ET.SubElement(coordonnees,'telfixe')
 		numtel = ET.SubElement(telfixe,'numtel')
-		numtel.text = str(row['action-extra-numtel'])
+		numtel.text = celltostr(row['action-extra-numtel'])
 		courriel = ET.SubElement(coordonnees,'courriel')
-		courriel.text = str(row['action-extra-courriel'])
+		courriel.text = celltostr(row['action-extra-courriel'])
 		
 		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'modalites-handicap'
-		extra.text = str(row['action-extra-modalites-handicap'])
+		extra.text = celltostr(row['action-extra-modalites-handicap'])
 		
 		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'info-admission'
-		extra.text = str(row['action-extra-info-admission'])
+		extra.text = celltostr(row['action-extra-info-admission'])
 		
 		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'duree-apprentissage'
-		extra.text = str(row['action-extra-duree-apprentissage'])
+		extra.text = celltostr(row['action-extra-duree-apprentissage'])
 		
 		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'code-rythme-formation'
-		extra.text = str(row['action-extra-code-rythme-formation'])
+		extra.text = celltostr(row['action-extra-code-rythme-formation'])
 		
 		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'individuelle-collective'
-		extra.text = str(row['action-extra-individuelle-collective'])
+		extra.text = celltostr(row['action-extra-individuelle-collective'])
 		
 		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'frais-anpec'
-		extra.text = str(row['action-extra-frais-anpec'])
+		extra.text = celltostr(row['action-extra-frais-anpec'])
 		
 		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'detail-frais-anpec'
-		extra.text = str(row['action-extra-detail-frais-anpec'])
+		extra.text = celltostr(row['action-extra-detail-frais-anpec'])
 		
 		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'code-modele-economique'
-		extra.text = str(row['action-extra-code-modele-economique'])
+		extra.text = celltostr(row['action-extra-code-modele-economique'])
 		
 		extra = ET.SubElement(extras,'extras')
 		extra2 = ET.SubElement(extra,'extra')
 		extra2.attrib['info'] = 'taux-tva'
-		extra2.text = str(row['action-extra-taux-tva'])
+		extra2.text = celltostr(row['action-extra-taux-tva'])
 		extra2 = ET.SubElement(extra,'extra')
 		extra2.attrib['info'] = 'frais-ht'
-		extra2.text = str(row['action-extra-frais-ht'])
+		extra2.text = celltostr(row['action-extra-frais-ht'])
 		extra2 = ET.SubElement(extra,'extra')
 		extra2.attrib['info'] = 'frais-ttc'
-		extra2.text = str(row['action-extra-frais-ttc'])
+		extra2.text = celltostr(row['action-extra-frais-ttc'])
 		
 		# Organisme de formation
 		organisme_formation_responsable = ET.SubElement(formation,'organisme-formation-responsable')
 		SIRET_organisme_formation = ET.SubElement(organisme_formation_responsable,'SIRET-organisme-formation')
 		siret = ET.SubElement(SIRET_organisme_formation,'SIRET')
-		siret.text = str(row['SIRET'])
+		siret.text = celltostr(row['SIRET'])
 
 		# Extra
 		extras = ET.SubElement(formation,'extras')
 		extras.attrib['info'] = 'formation'
 		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'resume-contenu'
-		extra.text = str(row['resume-contenu'])
+		extra.text = celltostr(row['resume-contenu'])
 		
 	print("File generated.")
 
