@@ -37,12 +37,14 @@ def parse_generate():
 	# cp1252
 	# utf-8-sig
 	# latin1
-	data = pd.read_csv(filename, engine=engine, encoding=file_encoding, quoting=csv.QUOTE_NONE, error_bad_lines=False, sep=sep)
+	data = pd.read_csv(filename, engine=engine, encoding=file_encoding, error_bad_lines=False, sep=sep, quotechar="\"")
 
 	for index, row in data.iterrows():
 		print("File generation...")
 
 		offres = ET.SubElement(lheo,'offres')
+
+		print(row['numero'])
 
 		formation = ET.SubElement(offres,'formation')
 		formation.attrib['numero'] = str(row['numero'])
