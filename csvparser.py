@@ -82,9 +82,6 @@ def parse_generate():
 		action.attrib['datemaj'] = celltostr(row['action-datemaj'])
 		action.attrib['datecrea'] = celltostr(row['action-datecrea'])
 
-		# rythme_formation = ET.SubElement(action,'rythme-formation')
-		# rythme_formation.text = celltostr(row['rythme-formation'])
-
 		niveau_entree_obligatoire = ET.SubElement(action,'niveau-entree-obligatoire')
 		niveau_entree_obligatoire.text = celltostr(row['niveau-entree-obligatoire'])
 
