@@ -21,7 +21,7 @@ def parse_generate():
 	# XML
 	# create the file structure
 	lheo = ET.Element('lheo')
-	lheo.attrib['xmlns'] = 'http://www.lheo.org/2.2'
+	lheo.attrib['xmlns'] = 'https://www.of.moncompteformation.gouv.fr'
 
 	file_encoding = 'UTF-8'
 	sep = ','
@@ -82,8 +82,8 @@ def parse_generate():
 		action.attrib['datemaj'] = celltostr(row['action-datemaj'])
 		action.attrib['datecrea'] = celltostr(row['action-datecrea'])
 
-		rythme_formation = ET.SubElement(action,'rythme-formation')
-		rythme_formation.text = celltostr(row['rythme-formation'])
+		# rythme_formation = ET.SubElement(action,'rythme-formation')
+		# rythme_formation.text = celltostr(row['rythme-formation'])
 
 		niveau_entree_obligatoire = ET.SubElement(action,'niveau-entree-obligatoire')
 		niveau_entree_obligatoire.text = celltostr(row['niveau-entree-obligatoire'])
@@ -100,7 +100,6 @@ def parse_generate():
 
 		nom = ET.SubElement(coordonnees,'nom')
 		nom.text = celltostr(row['lieu-de-formation-coordonnees-nom'])
-
 		prenom = ET.SubElement(coordonnees,'prenom')
 		prenom.text = celltostr(row['lieu-de-formation-coordonnees-prenom'])
 
@@ -109,12 +108,36 @@ def parse_generate():
 
 		ligne = ET.SubElement(adresse,'ligne')
 		ligne.text = celltostr(row['lieu-de-formation-adresse-numero'])+' '+celltostr(row['lieu-de-formation-adresse-ligne'])
-
 		codepostal = ET.SubElement(adresse,'codepostal')
 		codepostal.text = celltostr(row['lieu-de-formation-adresse-codepostal'])
-
 		ville = ET.SubElement(adresse,'ville')
 		ville.text = celltostr(row['lieu-de-formation-adresse-ville'])
+
+		# Geoloc
+		geoloc = ET.SubElement(adresse,'geolocalisation')
+		lat = ET.SubElement(geoloc,'latitude')
+		lat.text = celltostr(row['lieu-de-formation-latitude'])
+		lng = ET.SubElement(geoloc,'longitude')
+		lng.text = celltostr(row['lieu-de-formation-longitude'])
+
+		# Extra adresse
+		extras = ET.SubElement(adresse,'extras')
+		extras.attrib['info'] = 'adresse'
+		extra = ET.SubElement(extras,'extra')
+		extra.attrib['info'] = 'numero-voie'
+		extra.text = celltostr(row['lieu-de-formation-extra-numero'])
+		extra = ET.SubElement(extras,'extra')
+		extra.attrib['info'] = 'code-nature-voie'
+		extra.text = celltostr(row['lieu-de-formation-extra-codevoie'])
+		extra = ET.SubElement(extras,'extra')
+		extra.attrib['info'] = 'libelle-voie'
+		extra.text = celltostr(row['lieu-de-formation-extra-libvoie'])
+		extra = ET.SubElement(extras,'extra')
+		extra.attrib['info'] = 'accessibilite-batimentaire'
+		extra.text = celltostr(row['lieu-de-formation-extra-acces'])
+		extra = ET.SubElement(extras,'extra')
+		extra.attrib['info'] = 'conformite-reglementaire'
+		extra.text = celltostr(row['lieu-de-formation-extra-regle'])
 
 		telfixe = ET.SubElement(coordonnees,'telfixe')
 		numtel = ET.SubElement(telfixe,'numtel')
@@ -151,6 +174,32 @@ def parse_generate():
 		ville = ET.SubElement(adresse,'ville')
 		ville.text = celltostr(row['session-adresse-ville'])
 
+		# Session Geoloc
+		geoloc = ET.SubElement(adresse,'geolocalisation')
+		lat = ET.SubElement(geoloc,'latitude')
+		lat.text = celltostr(row['session-latitude'])
+		lng = ET.SubElement(geoloc,'longitude')
+		lng.text = celltostr(row['session-longitude'])
+
+		# Session Extra adresse
+		extras = ET.SubElement(adresse,'extras')
+		extras.attrib['info'] = 'adresse'
+		extra = ET.SubElement(extras,'extra')
+		extra.attrib['info'] = 'numero-voie'
+		extra.text = celltostr(row['session-extra-numero'])
+		extra = ET.SubElement(extras,'extra')
+		extra.attrib['info'] = 'code-nature-voie'
+		extra.text = celltostr(row['session-extra-codevoie'])
+		extra = ET.SubElement(extras,'extra')
+		extra.attrib['info'] = 'libelle-voie'
+		extra.text = celltostr(row['session-extra-libvoie'])
+		extra = ET.SubElement(extras,'extra')
+		extra.attrib['info'] = 'accessibilite-batimentaire'
+		extra.text = celltostr(row['session-extra-acces'])
+		extra = ET.SubElement(extras,'extra')
+		extra.attrib['info'] = 'conformite-reglementaire'
+		extra.text = celltostr(row['session-extra-regle'])
+
 		etat_recrutement = ET.SubElement(session,'etat-recrutement')
 		etat_recrutement.text = celltostr(row['etat-recrutement'])
 
@@ -184,6 +233,23 @@ def parse_generate():
 		codepostal.text = celltostr(row['adresse-information-codepostal'])
 		ville = ET.SubElement(adresse,'ville')
 		ville.text = celltostr(row['adresse-information-ville'])
+
+		# Adresse Info Geoloc
+		geoloc = ET.SubElement(adresse,'geolocalisation')
+		lat = ET.SubElement(geoloc,'latitude')
+		lat.text = celltostr(row['adresse-information-latitude'])
+		lng = ET.SubElement(geoloc,'longitude')
+		lng.text = celltostr(row['adresse-information-longitude'])
+
+		# Adresse Info Extra adresse
+		extras = ET.SubElement(adresse,'extras')
+		extras.attrib['info'] = 'adresse'
+		extra = ET.SubElement(extras,'extra')
+		extra.attrib['info'] = 'ligne5-adresse'
+		extra.text = celltostr(row['adresse-information-extra-ligne5-adresse'])
+		extra = ET.SubElement(extras,'extra')
+		extra.attrib['info'] = 'conformite-reglementaire'
+		extra.text = celltostr(row['adresse-information-extra-regle'])
 
 		restauration = ET.SubElement(action,'restauration')
 		restauration.text = celltostr(row['restauration'])
