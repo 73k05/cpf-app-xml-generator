@@ -306,17 +306,21 @@ def parse_generate():
 		extra.attrib['info'] = 'info-admission'
 		extra.text = celltostr(row['action-extra-info-admission'])
 		
-		extra = ET.SubElement(extras,'extra')
+		extra = ET.SubElement(extras,'extras')
 		extra.attrib['info'] = 'codes-modalites-admission'
-		extra.text = celltostr(row['action-extra-modalites-admission'])
+		extra2 = ET.SubElement(extra,'extra')
+		extra2.attrib['info'] = 'code-modalites-admission'
+		extra2.text = celltostr(row['action-extra-modalites-admission'])
 		
 		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'duree-apprentissage'
 		extra.text = celltostr(row['action-extra-duree-apprentissage'])
 		
-		extra = ET.SubElement(extras,'extra')
+		extra = ET.SubElement(extras,'extras')
 		extra.attrib['info'] = 'codes-rythme-formation'
-		extra.text = celltostr(row['action-extra-codes-rythme-formation'])
+		extra2 = ET.SubElement(extra,'extra')
+		extra2.attrib['info'] = 'code-rythme-formation'
+		extra2.text = celltostr(row['action-extra-codes-rythme-formation'])
 		
 		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'individuelle-collective'
