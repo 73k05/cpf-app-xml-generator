@@ -82,6 +82,9 @@ def parse_generate():
 		action.attrib['datemaj'] = celltostr(row['action-datemaj'])
 		action.attrib['datecrea'] = celltostr(row['action-datecrea'])
 
+		# rythme_formation = ET.SubElement(action,'rythme-formation')
+		# rythme_formation.text = celltostr(row['rythme-formation'])
+
 		niveau_entree_obligatoire = ET.SubElement(action,'niveau-entree-obligatoire')
 		niveau_entree_obligatoire.text = celltostr(row['niveau-entree-obligatoire'])
 
@@ -304,12 +307,16 @@ def parse_generate():
 		extra.text = celltostr(row['action-extra-info-admission'])
 		
 		extra = ET.SubElement(extras,'extra')
+		extra.attrib['info'] = 'codes-modalites-admission'
+		extra.text = celltostr(row['action-extra-modalites-admission'])
+		
+		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'duree-apprentissage'
 		extra.text = celltostr(row['action-extra-duree-apprentissage'])
 		
 		extra = ET.SubElement(extras,'extra')
-		extra.attrib['info'] = 'code-rythme-formation'
-		extra.text = celltostr(row['action-extra-code-rythme-formation'])
+		extra.attrib['info'] = 'codes-rythme-formation'
+		extra.text = celltostr(row['action-extra-codes-rythme-formation'])
 		
 		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'individuelle-collective'
@@ -320,6 +327,10 @@ def parse_generate():
 		extra.text = celltostr(row['action-extra-frais-anpec'])
 		
 		extra = ET.SubElement(extras,'extra')
+		extra.attrib['info'] = 'frais-certif-inclus-frais-anpec'
+		extra.text = celltostr(row['action-extra-frais-certif-anpec'])
+		
+		extra = ET.SubElement(extras,'extra')
 		extra.attrib['info'] = 'detail-frais-anpec'
 		extra.text = celltostr(row['action-extra-detail-frais-anpec'])
 		
@@ -328,6 +339,7 @@ def parse_generate():
 		extra.text = celltostr(row['action-extra-code-modele-economique'])
 		
 		extra = ET.SubElement(extras,'extras')
+		extra.attrib['info'] = 'frais-pedagogiques'
 		extra2 = ET.SubElement(extra,'extra')
 		extra2.attrib['info'] = 'taux-tva'
 		extra2.text = celltostr(row['action-extra-taux-tva'])
@@ -337,6 +349,10 @@ def parse_generate():
 		extra2 = ET.SubElement(extra,'extra')
 		extra2.attrib['info'] = 'frais-ttc'
 		extra2.text = celltostr(row['action-extra-frais-ttc'])
+		
+		extra = ET.SubElement(extras,'extra')
+		extra.attrib['info'] = 'existence-prerequis'
+		extra.text = celltostr(row['action-extra-existence-prerequis'])
 		
 		# Organisme de formation
 		organisme_formation_responsable = ET.SubElement(formation,'organisme-formation-responsable')
