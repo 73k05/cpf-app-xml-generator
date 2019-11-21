@@ -23,6 +23,8 @@ def parse_generate():
 	lheo = ET.Element('lheo')
 	lheo.attrib['xmlns'] = 'https://www.of.moncompteformation.gouv.fr'
 
+	offres = ET.SubElement(lheo,'offres')
+
 	file_encoding = 'UTF-8'
 	sep = ','
 	with open(r'trame.csv', 'rb') as f:
@@ -46,8 +48,6 @@ def parse_generate():
 
 	for index, row in data.iterrows():
 		print("File generation...")
-
-		offres = ET.SubElement(lheo,'offres')
 
 		formation = ET.SubElement(offres,'formation')
 		formation.attrib['numero'] = celltostr(row['numero'])
