@@ -48,6 +48,7 @@ def parse_generate():
 
 	for index, row in data.iterrows():
 		print("File generation...")
+		print(index)
 
 		formation = ET.SubElement(offres,'formation')
 		formation.attrib['numero'] = celltostr(row['numero'])
