@@ -6,6 +6,6 @@ for process in psutil.process_iter():
         print('Process found. Terminating it.')
         process.terminate()
         break
-else:
-    print('Process not found: starting it.')
-    Popen(['python', 'simple_http_server.py'])
+
+print('Process not found or stopped: starting it.')
+Popen(['python', 'simple_http_server.py'])
