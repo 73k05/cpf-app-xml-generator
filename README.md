@@ -1,5 +1,8 @@
 # cpf-app-xml-generator
-Parse csv file that list all the offers of a French school to generate xml file that will feed government CPF new App
+Parse csv file that list all the offers of a French school to generate xml file that will feed government CPF new App. https://play.google.com/store/apps/details?id=fr.icdc.sl6.app Mon compte formation
+
+# App preview
+
 
 ## Start server
 ```python simple_http_server.py```
