@@ -376,9 +376,13 @@ def parse_generate():
 
 	# create a new XML file with the results
 	myoffers = ET.tostring(lheo, encoding='utf-8').decode() # python3
-	# myoffers = ET.tostring(lheo, encoding='UTF-8').decode()
-	mycatalogue = io.open("catalogue.xml", "w", encoding='utf8')
-	mycatalogue.write(myoffers)
+
+	# Old way to save XML in UTF-8 encoding
+	# mycatalogue = io.open("catalogue.xml", "w", encoding='utf8')
+	# mycatalogue.write(myoffers)
+	
+	tree = ET.ElementTree(lheo)
+	tree.write('catalogue.xml', encoding='iso-8859-1', xml_declaration=True)
 	
 # Start parsing
 parse_generate()
