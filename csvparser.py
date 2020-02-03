@@ -5,6 +5,9 @@ import os
 import glob
 import csv
 import chardet
+from shutil import copyfile
+
+filename = "trame.csv"
 
 def celltostr(cell):
 	if not pd.isnull(cell):
@@ -13,7 +16,6 @@ def celltostr(cell):
 
 def parse_generate():
 
-	filename = "trame.csv"
 	if not os.path.exists(filename):
 		print("File does not exists")
 		return
@@ -386,6 +388,9 @@ def parse_generate():
 	
 # Start parsing
 parse_generate()
+
+# Save last trame.csv
+copyfile(filename, "last_trame_bk.csv")
 
 # Remove files
 def remove_file(filename):

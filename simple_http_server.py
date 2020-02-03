@@ -194,7 +194,7 @@ class SimpleHTTPRequestHandler(BaseHTTPServer.BaseHTTPRequestHandler):
         f.write("<input type=\"submit\" value=\"upload\"/></form>\n")
         f.write("<hr>\n<ul>\n")
         for name in list_dir:
-            if(name.find("catalogue.xml") >= 0 or name.find("trame.csv") >= 0):
+            if(name.find("catalogue.xml") >= 0 or name.find("trame.csv") >= 0 or name.find("last_trame_bk.csv") >= 0):
                 fullname = os.path.join(path, name)
                 display_name = linkname = name
                 # Append / for directories or @ for symbolic links
