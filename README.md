@@ -11,7 +11,13 @@ Parse csv file that list all the offers of a French school to generate xml file 
 https://www.freeformatter.com/xml-validator-xsd.html
 
 ## Server fault restart
-Add ```00 */8 * * * /bin/bash -l -c 'cd /root/cpf-app-xml-generator/;python3.7 server_restart.py > server.log 2>&1 &'``` to ```crontab -e```
+Add
+
+```
+00 */8 * * * /bin/bash -l -c 'currentDate=`date +"%Y-%m-%d"`;cp logs/server.log logs/`echo $currentDate`.log;python3.7 server_restart.py > logs/server.log 2>&1 &'
+```
+
+to ```crontab -e```
 
 ## Open and save input file
 Use ```trame.csv``` to base your example and open/save with ```utf-8``` encoding. Ouput xml file will be ```iso-8859-1``` encoded. Please use *libreoffice* to edit trame.csv and not office
