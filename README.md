@@ -14,7 +14,7 @@ https://www.freeformatter.com/xml-validator-xsd.html
 Add
 
 ```
-00 */8 * * * /bin/bash -l -c 'currentDate=`date +"%Y-%m-%d"`;cp logs/server.log logs/`echo $currentDate`.log;python3.7 server_restart.py > logs/server.log 2>&1 &'
+31 19 * * * /bin/bash -l -c 'currentDate=`date +"\%Y-\%m-\%d"`;cd /root/cpf-app-xml-generator; cp logs/server.log logs/`echo $currentDate`.log;python3.7 server_restart.py > logs/server.log 2>&1 &'
 ```
 
 to ```crontab -e```
