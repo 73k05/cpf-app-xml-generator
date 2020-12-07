@@ -8,8 +8,13 @@ for process in psutil.process_iter():
         process.terminate()
         break
 
+print('Pull code')
 git_pull_process = Popen(["git", "pull"])
 git_pull_process.wait()
 
-print('Process not found or stopped: starting it.')
+print('Install deps')
+git_pull_process = Popen(["pip", "install", " -r", "requirements.txt"])
+git_pull_process.wait()
+
+print('Starting server...')
 Popen(['python3.9', '__main__.py', '--ssl', '-d', './upload', '--password', '*', '--env', 'PROD'])
