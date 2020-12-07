@@ -1,0 +1,202 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<lheo xmlns="https://www.of.moncompteformation.gouv.fr">
+    <offres>
+        <formation numero="20000" datemaj="20190101" datecrea="20180101">
+            <intitule-formation>Anglais de la Restauration </intitule-formation>
+            <objectif-formation>
+                <![CDATA[<ul> Après échanges avec notre coordinateur pédagogique, nous fixerons ensemble les objectifs individualisés de la formation avec des points précis sur lesquels travailler afin de parvenir au niveau ciblé dans la langue.
+<p><u><strong> Votre accompagnement sur-mesure : </strong></u></p>
+<li> Programme élaboré et adapté à vos objectifs par votre formateur dédié</li>
+<li> Elle ou il mélange objectifs généraux (grammaire, vocabulaire, prononciation) et contenus personnalisés</li>
+<li> Si nécessaire, notre formateur natif adapte et oriente les contenus pour gagner en efficacité pédagogique. </li>
+<li>  Nous vous garantissons l&#8217;obtention de votre certificat. </li>
+<li> En savoir plus sur <u><A HREF='http://www.bonjour-world.com/Formation_Langue_BonjourWorld_0.pdf' target='_blank'> notre approche personnalisée </u></a></li>
+Avec BONJOUR WORLD, vous serez formé BIEN, VITE et PRECIS dans la langue. </ul>]]>
+            </objectif-formation>
+            <resultats-attendus>
+                <![CDATA[<ul>
+<li> Acquérir de nouvelles compétences linguistiques en anglais </li>
+<li> Gagner en aisance en anglais dans diverses situations personnelles comme professionnelles </li>
+<li> A l'issue de cette formation : votre niveau en anglais (CECRL) sera attesté par un certificat d&#8217;Etat.</li>
+</ul>]]>
+            </resultats-attendus>
+            <contenu-formation>
+                <![CDATA[<ul>
+Contenu du programme Anglais de la Restauration  <li><p><u><strong> Méthode de formation : </strong></u></li> Chaque session de cours réalisée avec votre formateur natif dédié est structurée en 5 étapes :
+<ul><li> Introduction : vision d&#8217;ensemble du cours du jour </ul></li>
+<ul><li> Activé brise-glace :  animation du formateur </ul></li>
+<ul><li> Activité de production : travail axé sur les 3 compétences clés expression et compréhension orale ainsi que l&#8217;interaction  </ul></li>
+<ul><li> Activité de consolidation : aller dans plus de détail avec les exercices écrits et media dans le portail apprenant </ul></li>
+<ul><li> Correction différée : retour commenté du formateur et cours en replay si souhaité  </ul></li>
+Ces 5 étapes sont réalisées en présentiel aussi bien qu&#8217;en distanciel. Elles sont ajustées en fonction de vos objectifs. L&#8217;ensemble des sessions se retrouve sur votre portail apprenant, véritable cahier de cours numérisé qui s&#8217;enrichit au fur et à mesure de votre parcours. Ce suivi unique est réalisé par votre formateur et tuteur référent qui vous accompagne tout au long de votre formation.
+
+<li><p><u><strong> Suivi </strong></u></li>
+A intervalle régulier, votre formateur référent s&#8217;assure avec vous du contrôle des acquis, et si nécessaire, ajuste le programme de formation élaboré en début de programme
+
+<li><p><u><strong> Contenu </strong></u></li>
+Ce parcours se compose de :
+<ul><li> un audit vos besoins, de votre niveau linguistique et de votre zone de confort d'apprentissage  </ul></li>
+<ul><li> un parcours sur mesure avec <u><A HREF='http://www.bonjour-world.com/Formation_Langue_BonjourWorld_0.pdf' target='_blank'>un socle et des blocs de compétences spécifiques de votre choix</u></a> </ul></li>
+<ul><li> le passage d&#8217;un certificat en fin de parcours </ul></li>]]>
+            </contenu-formation>
+            <parcours-de-formation>2</parcours-de-formation>
+            <objectif-general-formation>6</objectif-general-formation>
+            <certification>
+                <code-CERTIFINFO>100397</code-CERTIFINFO>
+            </certification>
+            <action numero="20000" datemaj="20191211" datecrea="20191211">
+                <niveau-entree-obligatoire>1</niveau-entree-obligatoire>
+                <modalites-enseignement>0</modalites-enseignement>
+                <conditions-specifiques>
+                    <![CDATA[<ul>
+ <li><strong> Formation animée par votre formateur natif</strong></li>
+ <li> Cours personnalisés et adaptés </li>
+<li> Ciblage initial des besoins, du niveau linguistique et des zones de confort d&#8217;apprentissage</li>
+<li> Planification dans les 48 heures après votre confirmation</li>
+<li> Rythme de 1 à 2 heures par semaine, ou plus si vous le souhaitez</li>
+<li> Formateurs disponibles <strong> du lundi au samedi, de 7h à 20h</strong> </li>
+<li> Certification en fin de parcours</li>
+<li> En savoir plus : <u><A HREF='http://www.bonjour-world.com/Formation_Langue_BonjourWorld_0.pdf' target='_blank'> notre approche sur-mesure </u></a>, <u><A HREF='https://www.youtube.com/watch?v=SCTpYt2kP9c&feature=youtu.be' target='_blank'> nos centres en vidéo </u></a></li>
+ </ul>
+]]>
+                </conditions-specifiques>
+                <lieu-de-formation>
+                    <coordonnees numero="45000">
+                        <nom>Centre</nom>
+                        <prenom>BONJOUR WORLD</prenom>
+                        <adresse numero="12">
+                            <ligne>12 Place Du Vieux Marché</ligne>
+                            <codepostal>45000</codepostal>
+                            <ville>ORLEANS</ville>
+                            <geolocalisation>
+                                <latitude>47.89942070000001</latitude>
+                                <longitude>1.9032803</longitude>
+                            </geolocalisation>
+                            <extras info="adresse">
+                                <extra info="numero-voie">12</extra>
+                                <extra info="code-nature-voie">PL</extra>
+                                <extra info="libelle-voie">Place Du Vieux Marché</extra>
+                                <extra info="accessibilite-batimentaire">Notre référent handicap est disponible pour envisager l&#8217;aménagement de la formation et de la certification à travers un Projet Personnalité de Formation. </extra>
+                                <extra info="conformite-reglementaire">1</extra>
+                            </extras>
+                        </adresse>
+                        <telfixe>
+                            <numtel>02 38 21 51 52</numtel>
+                        </telfixe>
+                        <courriel>hello@bonjour-world.com</courriel>
+                    </coordonnees>
+                </lieu-de-formation>
+                <modalites-entrees-sorties>0</modalites-entrees-sorties>
+                <url-action>
+                    <urlweb>http://www.bonjour-world.com</urlweb>
+                </url-action>
+                <session numero="20000" datemaj="20191201" datecrea="20191101">
+                    <periode>
+                        <debut>20200101</debut>
+                        <fin>20211231</fin>
+                    </periode>
+                    <adresse-inscription>
+                        <adresse numero="12">
+                            <ligne>12Place Du Vieux Marché</ligne>
+                            <codepostal>45000</codepostal>
+                            <ville>ORLEANS</ville>
+                            <geolocalisation>
+                                <latitude>47.89942070000001</latitude>
+                                <longitude>1.9032803</longitude>
+                            </geolocalisation>
+                            <extras info="adresse">
+                                <extra info="numero-voie">12</extra>
+                                <extra info="code-nature-voie">PL</extra>
+                                <extra info="libelle-voie">Place Du Vieux Marché</extra>
+                                <extra info="accessibilite-batimentaire">Notre référent handicap est disponible pour envisager l&#8217;aménagement de la formation et de la certification à travers un Projet Personnalité de Formation. </extra>
+                                <extra info="conformite-reglementaire">1</extra>
+                            </extras>
+                        </adresse>
+                    </adresse-inscription>
+                    <etat-recrutement>1</etat-recrutement>
+                    <extras info="session">
+                        <extra info="contact-inscription">
+                            <coordonnees numero="45">
+                                <nom>Centre</nom>
+                                <prenom>BONJOUR WORLD</prenom>
+                                <telfixe>
+                                    <numtel>02 38 21 51 52</numtel>
+                                </telfixe>
+                                <courriel>hello@bonjour-world.com</courriel>
+                            </coordonnees>
+                        </extra>
+                        <extra info="garantie">1</extra>
+                    </extras>
+                </session>
+                <adresse-information>
+                    <adresse numero="12">
+                        <ligne>12 Place Du Vieux Marché</ligne>
+                        <codepostal>45000</codepostal>
+                        <ville>ORLEANS</ville>
+                        <geolocalisation>
+                            <latitude>47.89942070000001</latitude>
+                            <longitude>1.9032803</longitude>
+                        </geolocalisation>
+                        <extras info="adresse">
+                            <extra info="ligne5-adresse">0</extra>
+                            <extra info="conformite-reglementaire">0</extra>
+                        </extras>
+                    </adresse>
+                </adresse-information>
+                <restauration>Restauration possible si demandé (frais en plus)</restauration>
+                <hebergement>Hébergement Disponible si demandé (frais en plus)</hebergement>
+                <transport>0</transport>
+                <acces-handicapes>
+                    <![CDATA[<strong> Notre référent handicap, Melissa, est disponible pour envisager l&#8217;aménagement de la formation et de la certification à travers un Projet Personnalité de Formation: hello@bonjour-world.com et 02 38 21 51 52 </strong>
+]]>
+                </acces-handicapes>
+                <langue-formation>EN</langue-formation>
+                <modalites-recrutement>Aucune</modalites-recrutement>
+                <modalites-pedagogiques>Notre référent handicap est disponible pour envisager l'aménagement de la formation à travers un Projet Personnalité de Formation: hello@bonjour-world.com et 02 38 21 51 52</modalites-pedagogiques>
+                <code-perimetre-recrutement>1</code-perimetre-recrutement>
+                <nombre-heures-centre>20</nombre-heures-centre>
+                <nombre-heures-entreprise>20</nombre-heures-entreprise>
+                <extras info="action">
+                    <extra info="contact-information">
+                        <coordonnees numero="45">
+                            <nom>Centre </nom>
+                            <prenom>BONJOUR WORLD</prenom>
+                            <telfixe>
+                                <numtel>02 38 21 51 52</numtel>
+                            </telfixe>
+                            <courriel>bonjour@bonjour-world.com</courriel>
+                        </coordonnees>
+                    </extra>
+                    <extra info="modalites-handicap">1</extra>
+                    <extra info="info-admission">Info sur l'admission</extra>
+                    <extras info="codes-modalites-admission">
+                        <extra info="code-modalites-admission">99999</extra>
+                    </extras>
+                    <extra info="duree-apprentissage">20</extra>
+                    <extras info="codes-rythme-formation">
+                        <extra info="code-rythme-formation">7</extra>
+                    </extras>
+                    <extra info="individuelle-collective">4</extra>
+                    <extra info="frais-anpec">1</extra>
+                    <extra info="frais-certif-inclus-frais-anpec">0</extra>
+                    <extra info="detail-frais-anpec">Frais de transport jusqu'au centre de formation et de trajet pendant la formation non pris en charge</extra>
+                    <extra info="code-modele-economique">1</extra>
+                    <extras info="frais-pedagogiques">
+                        <extra info="taux-tva">20</extra>
+                        <extra info="frais-ht">500</extra>
+                        <extra info="frais-ttc">600</extra>
+                    </extras>
+                    <extra info="existence-prerequis">1</extra>
+                </extras>
+            </action>
+            <organisme-formation-responsable>
+                <SIRET-organisme-formation>
+                    <SIRET>41984510200047</SIRET>
+                </SIRET-organisme-formation>
+            </organisme-formation-responsable>
+            <extras info="formation">
+                <extra info="resume-contenu">Formation Sur-Mesure en anglais grâce à un parcours pédagogique innovant avec nos formateurs formés pour plus d'efficacité.</extra>
+            </extras>
+        </formation>
+    </offres>
+</lheo>

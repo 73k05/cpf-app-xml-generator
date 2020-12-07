@@ -1,0 +1,9 @@
+colorama
+flask
+flask_httpauth
+werkzeug
+pyopenssl
+chardet
+pandas
+lxml
+psutil
