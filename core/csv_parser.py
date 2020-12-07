@@ -5,7 +5,7 @@ import chardet
 import pandas as pd
 from lxml.etree import CDATA
 
-from edofparser.utils.log import write_log
+from utils.log import write_log
 
 
 def celltostr(cell):

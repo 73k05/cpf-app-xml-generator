@@ -2,9 +2,9 @@
 __pycache__
 
 #Config
-edofparser/static/ssl/**
-edofparser/static/ssl/
-edofparser/config/config.ini
+static/ssl/**
+static/ssl/
+config/config.ini
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

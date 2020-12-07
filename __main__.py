@@ -9,11 +9,16 @@ from werkzeug.serving import run_simple
 from werkzeug.utils import secure_filename
 
 from core.csv_parser import parse_generate
-from edofparser import version as VERSION
-from edofparser.config.configuration_manager import ConfigurationManager
-from edofparser.utils.log import write_server_log
-from edofparser.utils.output import error, success
-from edofparser.utils.path import is_valid_subpath, is_valid_upload_path, get_parent_directory, process_files
+
+from config.configuration_manager import ConfigurationManager
+from utils.log import write_server_log
+from utils.output import error, success
+from utils.path import is_valid_subpath, is_valid_upload_path, get_parent_directory, process_files
+
+version_info = (2,0)
+version = '.'.join(str(c) for c in version_info)
+
+base_directory = ''
 
 
 def read_write_directory(directory):
@@ -36,7 +41,7 @@ def parse_arguments():
                         help=f'Port to serve [Default=8000]')
     parser.add_argument('--password', type=str, default='', help='Use a password to access the page. (No username)')
     parser.add_argument('--ssl', action='store_true', help='Use an encrypted connection')
-    parser.add_argument('--version', action='version', version='%(prog)s v' + VERSION)
+    parser.add_argument('--version', action='version', version='%(prog)s v')
     parser.add_argument('--env', type=str, default='DEV', help='DEV or PROD')
 
     args = parser.parse_args()
@@ -123,7 +128,7 @@ def main():
                 abort(403, 'Read Permission Denied: ' + requested_path)
 
             return render_template('home.html', files=directory_files, back=back,
-                                   directory=requested_path, is_subdirectory=is_subdirectory, version=VERSION)
+                                   directory=requested_path, is_subdirectory=is_subdirectory, version=version)
         else:
             return redirect('/')
 
