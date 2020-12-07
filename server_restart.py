@@ -17,4 +17,6 @@ pip_process = Popen(["pip3.9", "install", "-r", "requirements.txt"])
 pip_process.wait()
 
 print('Starting server...')
-Popen(['python3.9', '__main__.py', '--ssl', '-d', './upload', '--password', '*', '--env', 'PROD'])
+with open('server.log', 'w') as output:
+    server = Popen(['python3.9', '__main__.py', '--ssl', '-d', './upload', '--password', '*', '--env', 'PROD'])
+    server.communicate()
