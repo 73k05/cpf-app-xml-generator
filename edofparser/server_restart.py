@@ -13,7 +13,7 @@ git_pull_process = Popen(["git", "pull"])
 git_pull_process.wait()
 
 print('Install deps')
-pip_process = Popen(["pip3.9", "install", " -r", "requirements.txt"])
+pip_process = Popen(["pip3.9", "install", "-r", "requirements.txt"])
 pip_process.wait()
 
 print('Starting server...')
