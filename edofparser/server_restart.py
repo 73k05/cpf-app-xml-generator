@@ -13,8 +13,8 @@ git_pull_process = Popen(["git", "pull"])
 git_pull_process.wait()
 
 print('Install deps')
-pip_process = Popen(["pip3.9", "install", "-r", "requirements.txt"])
+pip_process = Popen(["pip3.9", "install", "-r", "../requirements.txt"])
 pip_process.wait()
 
 print('Starting server...')
-Popen(['python3.9', 'edofparser/__main__.py', '--ssl', '-d', './upload', '--password', '*', '--env', 'PROD'])
+Popen(['python3.9', '__main__.py', '--ssl', '-d', './upload', '--password', '*', '--env', 'PROD'])
