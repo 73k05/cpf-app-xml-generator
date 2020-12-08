@@ -5,7 +5,7 @@ Parse csv file that list all the offers of a French school to generate xml file 
 ![preview of app on store](https://raw.githubusercontent.com/73k05/cpf-app-xml-generator/master/resources/images/app_store.png)
 
 ## Start server
-```python3.9 server_restart.py```
+```python3.9 restart.py```
 
 ## XSD validation
 https://www.freeformatter.com/xml-validator-xsd.html

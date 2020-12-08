@@ -3,7 +3,8 @@ from subprocess import Popen
 import psutil
 
 for process in psutil.process_iter():
-    if process.cmdline() == ['python3.9', '__main__.py', '--ssl', '-d', './upload', '--password', '*', '--env', 'PROD']:
+    if process.cmdline() == ['python3.9', '__main__.py', '--ssl', '-d', './upload', '--password', '*', '--env', 'PROD',
+                             '>', 'server.log']:
         print('Process found. Terminating it.')
         process.terminate()
         break
@@ -17,6 +18,5 @@ pip_process = Popen(["pip3.9", "install", "-r", "requirements.txt"])
 pip_process.wait()
 
 print('Starting server...')
-with open('server.log', 'w') as output:
-    server = Popen(['python3.9', '__main__.py', '--ssl', '-d', './upload', '--password', '*', '--env', 'PROD'])
-    server.communicate()
+server = Popen(
+    ['python3.9', '__main__.py', '--ssl', '-d', './upload', '--password', '*', '--env', 'PROD', '>', 'server.log'])

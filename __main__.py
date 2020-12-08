@@ -58,7 +58,6 @@ def main():
     # loads applicative configuration
     config = ConfigurationManager(args.env)
 
-    PORT = int(config.active_configuration['PORT'])
     HOST = config.active_configuration['HOST']
     CERTIFICATE_PATH = config.active_configuration['CERTIFICATE_PATH']
     PRIVATE_KEY_PATH = config.active_configuration['PRIVATE_KEY_PATH']
