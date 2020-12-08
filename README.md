@@ -7,6 +7,8 @@ Parse csv file that list all the offers of a French school to generate xml file 
 ## Start server
 ```python3.9 restart.py```
 
+```python3.9 __main__.py --ssl -d ./upload --password * --env PROD > server.log```
+
 ## XSD validation
 https://www.freeformatter.com/xml-validator-xsd.html
 

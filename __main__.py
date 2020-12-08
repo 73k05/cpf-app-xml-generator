@@ -1,6 +1,8 @@
 import argparse
+import logging
 import os
 import signal
+from logging.handlers import RotatingFileHandler
 
 from flask import Flask, render_template, send_file, redirect, request, send_from_directory, abort
 from flask_httpauth import HTTPBasicAuth
@@ -8,17 +10,22 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from werkzeug.serving import run_simple
 from werkzeug.utils import secure_filename
 
-from core.csv_parser import parse_generate
-
 from config.configuration_manager import ConfigurationManager
+from core.csv_parser import parse_generate
 from utils.log import write_server_log
 from utils.output import error, success
 from utils.path import is_valid_subpath, is_valid_upload_path, get_parent_directory, process_files
 
-version_info = (2,0)
+version_info = (2, 0)
 version = '.'.join(str(c) for c in version_info)
 
 base_directory = ''
+
+# Flask Werkzeug Logger redirect to server.log file
+handler = RotatingFileHandler('logs/server.log', maxBytes=10000, backupCount=1)
+handler.setLevel(logging.INFO)
+
+logging.root.handlers = [handler]
 
 
 def read_write_directory(directory):

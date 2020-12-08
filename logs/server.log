@@ -1,0 +1,3 @@
+ * Running on https://localhost:8000/ (Press CTRL+C to quit)
+127.0.0.1 - - [08/Dec/2020 10:14:04] "[37mGET / HTTP/1.1[0m" 200 -
+127.0.0.1 - - [08/Dec/2020 10:14:04] "[37mGET /favicon.ico HTTP/1.1[0m" 200 -
