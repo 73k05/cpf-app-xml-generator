@@ -45,7 +45,7 @@ def parse_generate(file_csv_path):
     # cp1252
     # utf-8-sig
     # latin1
-    data = pd.read_csv(file_csv_path, engine=engine, encoding=file_encoding, error_bad_lines=False, sep=sep,
+    data = pd.read_csv(file_csv_path, engine=engine, encoding=file_encoding, on_bad_lines='skip', sep=sep,
                        quotechar="\"")
 
     for index, row in data.iterrows():
@@ -265,7 +265,7 @@ def parse_generate(file_csv_path):
         transport.text = celltostr(row['transport'])
 
         acces_handicapes = ET.SubElement(action, 'acces-handicapes')
-        acces_handicapes.text = CDATA(celltostr(row['acces-handicapes']))
+        acces_handicapes.text = celltostr(row['acces-handicapes'])
 
         langue_formation = ET.SubElement(action, 'langue-formation')
         langue_formation.text = celltostr(row['langue-formation'])

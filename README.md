@@ -4,10 +4,17 @@ Parse csv file that list all the offers of a French school to generate xml file 
 # App preview
 ![preview of app on store](https://raw.githubusercontent.com/73k05/cpf-app-xml-generator/master/resources/images/app_store.png)
 
+## Install deps
+`pip3 install -r requirements.txt`
+
 ## Start server
 ```python3.9 restart.py```
 
+### PROD With SSL
 ```python3.9 __main__.py --ssl -d ./upload --password * --env PROD > server.log```
+
+### DEV Without SSL
+```python3.9 __main__.py -d ./upload --password * --env DEV > server.log```
 
 ## XSD validation
 https://www.freeformatter.com/xml-validator-xsd.html
