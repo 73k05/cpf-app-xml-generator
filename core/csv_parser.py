@@ -256,13 +256,13 @@ def parse_generate(file_csv_path):
         extra.text = celltostr(row['adresse-information-extra-regle'])
 
         restauration = ET.SubElement(action, 'restauration')
-        restauration.text = celltostr(row['restauration'])
+        restauration.text = CDATA(celltostr(row['restauration']))
 
         hebergement = ET.SubElement(action, 'hebergement')
-        hebergement.text = celltostr(row['hebergement'])
+        hebergement.text = CDATA(celltostr(row['hebergement']))
 
         transport = ET.SubElement(action, 'transport')
-        transport.text = celltostr(row['transport'])
+        transport.text = CDATA(celltostr(row['transport']))
 
         acces_handicapes = ET.SubElement(action, 'acces-handicapes')
         acces_handicapes.text = celltostr(row['acces-handicapes'])
@@ -274,7 +274,7 @@ def parse_generate(file_csv_path):
         modalites_recrutement.text = celltostr(row['modalites-recrutement'])
 
         modalites_pedagogiques = ET.SubElement(action, 'modalites-pedagogiques')
-        modalites_pedagogiques.text = celltostr(row['modalites-pedagogiques'])
+        modalites_pedagogiques.text = CDATA(celltostr(row['modalites-pedagogiques']))
 
         code_perimetre_recrutement = ET.SubElement(action, 'code-perimetre-recrutement')
         code_perimetre_recrutement.text = celltostr(row['code-perimetre-recrutement'])
@@ -373,7 +373,7 @@ def parse_generate(file_csv_path):
         extras.attrib['info'] = 'formation'
         extra = ET.SubElement(extras, 'extra')
         extra.attrib['info'] = 'resume-contenu'
-        extra.text = celltostr(row['resume-contenu'])
+        extra.text = CDATA(celltostr(row['resume-contenu']))
 
     write_log("File generated.")
 
