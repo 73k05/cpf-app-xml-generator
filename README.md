@@ -2,7 +2,7 @@
 Parse csv file that list all the offers of a French school to generate xml file that will feed government CPF new App. https://play.google.com/store/apps/details?id=fr.icdc.sl6.app Mon compte formation
 
 # App preview
-![preview of app on store](https://raw.githubusercontent.com/73k05/cpf-app-xml-generator/master/resources/images/app_store.png)
+![preview of app on store](https://raw.githubusercontent.com/73k05/cpf-app-xml-generator/master/static/images/preview.png)
 
 ## Install deps
 `pip3 install -r requirements.txt`
