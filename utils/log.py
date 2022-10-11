@@ -16,7 +16,7 @@ def write_log(log_message):
 
 # Write in Log file
 def write_server_log(log_message):
-    print(log_message)
+    # print(log_message)
     if isinstance(log_message, str):
         try:
             f = open("server.log", "a+")
