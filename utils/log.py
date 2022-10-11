@@ -5,7 +5,7 @@ def write_log(log_message):
             f = open("output.log", "a+")
             # Do something with the file
         except IOError:
-            print("File not accessible")
+            # print("File not accessible")
             f = open("output.log", "w+")
 
         f.write(log_message)
@@ -22,7 +22,7 @@ def write_server_log(log_message):
             f = open("server.log", "a+")
             # Do something with the file
         except IOError:
-            print("File not accessible")
+            # print("File not accessible")
             f = open("server.log", "w+")
 
         f.write(log_message)
