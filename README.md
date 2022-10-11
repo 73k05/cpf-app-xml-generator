@@ -28,17 +28,27 @@ Add
 
 to ```crontab -e```
 
+## Certificates
+Use LetsEncrypt to create certificates on your machine: https://certbot.eff.org/instructions?ws=other&os=ubuntufocal Then modify `config/config.ini` file to update paths:
+```
+CERTIFICATE_PATH = /etc/letsencrypt/live/*/fullchain.pem
+PRIVATE_KEY_PATH = /etc/letsencrypt/live/*/privkey.pem         
+```
+
 ## Open and save input file
 Use ```trame.csv``` to base your example and open/save with ```utf-8``` encoding. Ouput xml file will be ```iso-8859-1``` encoded. Please use *libreoffice* to edit trame.csv and not office
 
 ### Open
-![open trame.csv](https://raw.githubusercontent.com/73k05/cpf-app-xml-generator/master/resources/images/open_csv.png)
+![open trame.csv](https://raw.githubusercontent.com/73k05/cpf-app-xml-generator/007d078a9197316decba03f4fc01c3a85d976d74/resources/images/open_csv.png)
 
 ### Save
-![save tram.csv](https://raw.githubusercontent.com/73k05/cpf-app-xml-generator/master/resources/images/save_csv.png)
+![save tram.csv](https://github.com/73k05/cpf-app-xml-generator/blob/007d078a9197316decba03f4fc01c3a85d976d74/resources/images/save_csv.png)
+
+
+
 
 ![Version 1.4](http://img.shields.io/badge/version-v1.4-green.svg)
-![Python 3.8](http://img.shields.io/badge/python-3.8-blue.svg)
+![Python 3.10.6](http://img.shields.io/badge/python-3.8-blue.svg)
 [![MIT License](http://img.shields.io/badge/license-MIT%20License-blue.svg)](https://github.com/sc0tfree/updog/blob/master/LICENSE)
 [![sc0tfree Twitter](http://img.shields.io/twitter/url/http/shields.io.svg?style=social&label=Follow)](https://twitter.com/sc0tfree)
 
