@@ -172,8 +172,12 @@ def main():
                     except PermissionError:
                         abort(403, 'Write Permission Denied: ' + full_path)
                     finally:
-                        parse_generate(full_path)
-                        write_server_log("File parsing started!")
+                        write_server_log("----File parsing started----")
+                        parsedCorrectly = parse_generate(full_path)
+                        write_server_log("----File parsing finished----")
+                        if parsedCorrectly == False:
+                            write_server_log("Error while parsing File not correctly formated")
+                            abort(415, 'File not correctly formated')
 
             return redirect(request.referrer)
 
