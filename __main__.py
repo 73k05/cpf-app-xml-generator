@@ -16,7 +16,7 @@ from utils.log import write_server_log
 from utils.output import error, success
 from utils.path import is_valid_subpath, is_valid_upload_path, get_parent_directory, process_files
 
-version_info = (2, 0)
+version_info = (2, 1)
 version = '.'.join(str(c) for c in version_info)
 
 base_directory = ''
