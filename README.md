@@ -1,14 +1,15 @@
 # CPF EDOF générateur de fichier XML
 Les citoyens français ont la possibilité d'utiliser leur Compte Professionel de Formation (CPF) pour se former auprés d'organismes certifiants. Afin de retrouver la liste des formations de votre organisme (OF) sur la plateforme (et par conséquent l'application) proposée par l'Espace des Organismes de Formation (EDOF) du gouvernement il est nécessaire de générer un fichier XML.
 
+![preview of app on store](https://raw.githubusercontent.com/73k05/cpf-app-xml-generator/master/static/images/preview.png)
+
 **Si vous êtes organisme de formation, cette page est faite pour vous!**
 
 Ce projet contient le code serveur BO développé en Python avec un petit front designé avec Bootstrap. Les sources permettent de déployer un petit Site Web grâce à la librairie Flask. Cette plateforme est hébergée sur votre ordinateur en local ou en ligne sur un serveur VPS par exemple. Une fois le serveur déployé très simplement, il suffit de téléverser un fichier CSV contenant toutes les formations EDOF lignes par ligne de votre Organisme de Formation. Chaque formation correspond à une ligne du fichier CSV et chaque colonne est une balise du fichier XML qui sera généré en sortie.
 
-Parse csv file that list all the offers of a French school to generate xml file that will feed government CPF new App. https://play.google.com/store/apps/details?id=fr.icdc.sl6.app Mon compte formation
+![preview of app on store](https://raw.githubusercontent.com/73k05/cpf-app-xml-generator/master/static/images/edof.png)
 
-# App preview
-![preview of app on store](https://raw.githubusercontent.com/73k05/cpf-app-xml-generator/master/static/images/preview.png)
+Parse csv file that list all the offers of a French school to generate xml file that will feed government CPF new App. https://play.google.com/store/apps/details?id=fr.icdc.sl6.app Mon compte formation
 
 # Installation
 
@@ -58,7 +59,7 @@ Use ```trame.csv``` to base your example and open/save with ```utf-8``` encoding
 ![save tram.csv](https://github.com/73k05/cpf-app-xml-generator/blob/007d078a9197316decba03f4fc01c3a85d976d74/resources/images/save_csv.png)
 
 
-# UpDog dependency is used to serve & upload files (Advanced Users)
+# UpDog is used to serve & upload files (Advanced Users)
 
 ![Version 1.4](http://img.shields.io/badge/version-v1.4-green.svg)
 ![Python 3.10.6](http://img.shields.io/badge/python-3.8-blue.svg)
