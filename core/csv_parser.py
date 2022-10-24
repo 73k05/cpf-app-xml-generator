@@ -77,8 +77,8 @@ def parse_generate(file_csv_path):
             objectif_general_formation.text = celltostr(row['objectif-general-formation'])
 
             certification = ET.SubElement(formation, 'certification')
-            code_CERTIFINFO = ET.SubElement(certification, 'code-CERTIFINFO')
-            code_CERTIFINFO.text = celltostr(row['code-CERTIFINFO'])
+            code_CERTIFINFO = ET.SubElement(certification, 'code-RS')
+            code_CERTIFINFO.text = celltostr(row['code-RS'])
 
             # Action
             action = ET.SubElement(formation, 'action')
